@@ -1,0 +1,45 @@
+.contents-row
+  .container
+    %h3.container__title プロジェクトを投稿する
+  %table.project
+    = form_with(model: @project, local: true) do |form| 
+      %tr
+      %th.project__title.box タイトル
+      %th= form.text_area :title, class: "input" 
+      %tr
+      %th.project__image.box 画像
+      %th= form.text_field :image, placeholder: "Image Url", class: "input"
+      %tr
+      %th.project__body.box 本文
+      %th= form.text_area :text, class: "input input3"
+      %tr
+      %th.project__profile.box プロフィール
+      %th= form.text_field :profile, class: "input"
+      %tr
+      %th.project__price.box 目標金額
+      %th= form.number_field :target_amount, class: "input"
+
+      %tr
+      %th.project__tarm.box 募集期間
+      %th= form.date_select :tarm, {use_month_numbers: true} , class: "input2"
+      %tr
+      %th.project__returnprice.box リターン① 寄付金額
+      %th= form.number_field :return_title_1, class: "input"
+      %tr
+      %th.project__return.box リターン① 
+      %th= form.text_area :return_price_1, class: "input"
+      %tr
+      %th.project__returnprice.box リターン② 寄付金額
+      %th= form.number_field :return_title_2, class: "input"
+      %tr
+      %th.project__return.box リターン②
+      %th= form.text_area :return_price_2, class: "input"
+      %tr
+      %th.project__returnprice.box リターン③ 寄付金額
+      %th= form.number_field :return_title_3, class: "input"
+      %tr
+      %th.project__return.box リターン③
+      %th= form.text_area :return_price_3, class: "input"
+
+      = form.submit "SEND" 
+ 
