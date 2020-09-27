@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.container{
+  height: 200px;
+  line-height: 200px;
+  color: rgb(115, 112, 107);
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.project tr{
+  border:solid 1px #ccc
+}
+.project th{
+  border:solid 1px #ccc
+}
+
+.project{
+  margin-left: 20px;
+}
+
+.box{
+  width: 200px;
+  padding-left: 10px;
+  color: rgb(115, 112, 107);
+  background: #eee;
+}
+
+.input{
+  width: 600px;
+  border:none
+}
+.input2{
+  width: 100px;
+  border:solid 1px #ccc;
+  margin-left: 10px;
+}
+
+.input3{
+  height: 400px;
+}
