@@ -13,19 +13,33 @@
   display: flex;
   justify-content: flex-end;
   &__user{
-    display: inline;
+    display: flex;
+    justify-content: flex-end;
     
-    &__new{
-      
+    &__name{
+    color: #ffffff;
+    display: inline-block;
+    line-height: 50px;
+    display: inline;
+    font-size: 18px;
     }
-    &__login{
-      margin: 0 60px;
+    &__icon{
+    width: 30px;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 60px;
     }
-    &__project{
+    &__btn{
+      &__login{
+      margin: 0 60px 0 30px;
+    }
+      &__project{
       font-size: 10px;
     }
-    &__patorn{
+      &__patorn{
       font-size: 10px;
+    }
     }
   }
 }
@@ -41,7 +55,8 @@
   font-size: 12px;
 }
 
-.Phot{
+.icon{
+  color: #ffffff;
 }
 
 .phot__image--background{
