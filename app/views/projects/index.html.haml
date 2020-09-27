@@ -1,14 +1,24 @@
 .Header
   .Header__user
-    = link_to "新規登録","#/", class: "Header__user__new btn" 
-    = link_to "ログイン","#/", class: "Header__user__login btn" 
-    //= link_to "プロジェクトを投稿する","#/", class: "Header__user__project btn" 
-    //= link_to "パトロンシステムに参加する","#/", class: "Header__user__patorn btn" 
+    - if user_signed_in?
+      .Header__user__name
+        = "#{current_user.name} さん"
+      .Header__user__icon
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog',class: "icon")
+      .Header__user__btn
+        = link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
+        = link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Header__user__btn__login btn" 
+    - else
+      .Header__user__btn
+        = link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
+        = link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 
+    
+
 
 .Phot
   .phot__image    
-    //= image_tag '/koneko2.jpeg',class: "phot__image--background"
-    //= image_tag '/koharubiyori26ver2.jpg',class: "phot__image--background"
     = image_tag '/下町ネコ.jpg',class: "phot__image--background"
   .expect
     .expect__contents
