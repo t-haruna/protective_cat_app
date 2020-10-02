@@ -1,45 +1,46 @@
 .contents-row
   .container
     %h3.container__title プロジェクトを投稿する
+
   %table.project
     = form_with(model: @project, local: true) do |form| 
       %tr
-      %th.project__title.box タイトル
-      %th= form.text_area :title, class: "input" 
+      %th.project__title.box1 タイトル
+      %th.box2= form.text_area :title, class: "input" 
       %tr
-      %th.project__image.box 画像
-      %th= form.text_field :image, placeholder: "Image Url", class: "input"
+      %th.project__image.box1 画像
+      %th.box2= form.text_field :image, placeholder: "Image Url", class: "input"
       %tr
-      %th.project__body.box 本文
-      %th= form.text_area :text, class: "input input3"
+      %th.project__body.box1 本文
+      %th.box2= form.text_area :text, class: "input input3"
       %tr
-      %th.project__profile.box プロフィール
-      %th= form.text_field :profile, class: "input"
+      %th.project__profile.box1 プロフィール
+      %th.box2= form.text_field :profile, class: "input"
       %tr
-      %th.project__price.box 目標金額
-      %th= form.number_field :target_amount, class: "input"
-
+      %th.project__price.box1 目標金額
+      %th.box2= form.text_field :target_amount, class: "input", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }
       %tr
-      %th.project__tarm.box 募集期間
-      %th= form.date_select :tarm, {use_month_numbers: true} , class: "input2"
+      %th.project__tarm.box1 募集期間
+      %th.box2= form.date_select :tarm, {use_month_numbers: true} , class: "input2"
       %tr
-      %th.project__returnprice.box リターン① 寄付金額
-      %th= form.number_field :return_title_1, class: "input"
+      %th.project__returnprice.box1 リターン① 寄付金額
+      %th.box2= form.number_field :return_price_1, class: "input"
       %tr
-      %th.project__return.box リターン① 
-      %th= form.text_area :return_price_1, class: "input"
+      %th.project__return.box1 リターン① 
+      %th.box2= form.text_area :return_title_1, class: "input"
       %tr
-      %th.project__returnprice.box リターン② 寄付金額
-      %th= form.number_field :return_title_2, class: "input"
+      %th.project__returnprice.box1 リターン② 寄付金額
+      %th.box2= form.number_field :return_price_2, class: "input"
       %tr
-      %th.project__return.box リターン②
-      %th= form.text_area :return_price_2, class: "input"
+      %th.project__return.box1 リターン②
+      %th.box2= form.text_area :return_title_2, class: "input"
       %tr
-      %th.project__returnprice.box リターン③ 寄付金額
-      %th= form.number_field :return_title_3, class: "input"
+      %th.project__returnprice.box1 リターン③ 寄付金額
+      %th.box2= form.number_field :return_price_3, class: "input"
       %tr
-      %th.project__return.box リターン③
-      %th= form.text_area :return_price_3, class: "input"
-
-      = form.submit "SEND" 
+      %th.project__return.box1 リターン③
+      %th.box2= form.text_area :return_title_3, class: "input"
+      %tr
+      %th.project__btn= form.submit "SEND" ,class: "form-btn"
+      %th
  

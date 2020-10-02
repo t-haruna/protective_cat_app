@@ -21,7 +21,7 @@
   
 .Body
   .Select
-    = link_to "クラウドファンディングをはじめる","#", class: "Select__start select"
+    = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
     = link_to "検索する","#", class: "Select__search select"
   .Contents
     .Contents__expect 
@@ -33,64 +33,29 @@
       %p 支援という形でともに実現して行きませんか？
 
     .Contents__projects
-      .Projects
-        .Box1
-          = image_tag '/野良猫イメージ.jpg',class: "Box1__image"
-        .Box2
-          .Box2__title
-            %p.Box2__title__contents 病気のネコを救いたい！！
-          .Box2__percent
-            %p.Box2__percent__contents 進捗率
-            %p.Box2__percent__contents 50%
-        .Details
-          .Details__total.detail
-            %p 支援総額 
-            %p ¥100,000
-          .Details__suppoter.detail
-            %p 支援者
-            %p 3名
-          .Details__term.detail
-            %p 募集期間
-            %p 2020年11月10日まで
-
-      .Projects
-        .Box1
-          = image_tag '/野良猫イメージ.jpg',class: "Box1__image"
-        .Box2
-          .Box2__title
-            %p.Box2__title__contents 病気のネコを救いたい！！
-          .Box2__percent
-            %p.Box2__percent__contents 進捗率
-            %p.Box2__percent__contents 50%
-        .Details
-          .Details__total.detail
-            %p 支援総額 
-            %p ¥100,000
-          .Details__suppoter.detail
-            %p 支援者
-            %p 3名
-          .Details__term.detail
-            %p 募集期間
-            %p 2020年11月10日まで
-
-      .Projects
-        .Box1
-          = image_tag '/野良猫イメージ.jpg',class: "Box1__image"
-        .Box2
-          .Box2__title
-            %p.Box2__title__contents 病気のネコを救いたい！！
-          .Box2__percent
-            %p.Box2__percent__contents 進捗率
-            %p.Box2__percent__contents 50%
-        .Details
-          .Details__total.detail
-            %p 支援総額 
-            %p ¥100,000
-          .Details__suppoter.detail
-            %p 支援者
-            %p 3名
-          .Details__term.detail
-            %p 募集期間
-            %p 2020年11月10日まで
+      
+      - @projects.each do |project|
+        .Projects    
+          .Box1
+            = link_to image_tag(src= project.image, class: "Box1__image"), project_path(project.id), method: :get
+          .Box2
+            .Box2__title
+              %p.Box2__title__contents= project.title
+            .Box2__percent
+              %p.Box2__percent__contents 進捗率
+              %p.Box2__percent__contents 50%
+          .Details
+            .Details__total.detail
+              %p 支援総額 
+              %p 100000円
+            .Details__suppoter.detail
+              %p 目標金額
+              = project.target_amount
+              円
+            .Details__term.detail
+              %p 募集期間
+              = project.tarm
+              まで
+        
     
 
