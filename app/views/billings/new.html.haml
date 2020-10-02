@@ -1,0 +1,64 @@
+.Donate
+  .Donate__title
+    return
+  .billing
+    .billing__box
+      .return__title
+        リターン①
+      .return__price.billing__return
+        寄付金額：
+        = @project.return_price_1
+        円
+      .return__content.billing__return
+        = @project.return_title_1
+    .Form 
+      
+      .Form__table
+        ※このリターンで寄付する回数を入力してください。
+        = form_with model: [@project, @billing], local: true do |f|
+          .Form__btn
+            = @project.return_price_1
+            円 ✖︎
+            = f.number_field :count_1, class: 'Form__count'
+            円 寄付する
+  .billing
+    .billing__box
+      .return__title
+        リターン②
+      .return__price.billing__return
+        寄付金額：
+        = @project.return_price_2
+        円
+      .return__content.billing__return
+        = @project.return_title_2
+    .Form 
+      ※このリターンで寄付する回数を入力してください。
+      .Form__table
+        //= form_with model: [@project, @billing], local: true do |f|
+          .Form__btn
+            = @project.return_price_2
+            円 ✖︎
+            = f.number_field :count_2, class: 'Form__count'
+            円 寄付する
+  .billing
+    .billing__box       
+      .return__title
+        リターン③
+      .return__price.billing__return
+        寄付金額：
+        = @project.return_price_3
+        円
+      .return__content.billing__return
+        = @project.return_title_3
+    .Form 
+      ※このリターンで寄付する回数を入力してください。
+      .Form__table
+        //= form_with model: [@project, @billing], local: true do |f|
+          .Form__btn
+            = @project.return_price_3
+            円 ✖︎
+            = f.number_field :count_3, class: 'Form__count'
+            円 寄付する
+
+          .Form__btn2 
+            = f.submit "寄付をする" ,class: 'Form__send'

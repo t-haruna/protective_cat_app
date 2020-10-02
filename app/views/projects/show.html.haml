@@ -1,0 +1,78 @@
+.project
+  .project__top
+    Project
+  .project__title
+    .project__title__main
+      病気のネコを助けたい！！
+    .project__title__name
+      NAME:
+      = @project.user.name
+  .project__main
+    .project__right
+      .project__right__image
+        = image_tag(src= @project.image, class: "image")
+      .project__right__text
+        %h2 プロジェクト詳細
+        %p= @project.text
+      .project__right__profile
+        %h2 Profile
+        
+        %p= @project.profile
+    .project__left
+      .project__left__contents
+        .contents-total
+          .contents-total__box1
+            現在の支援総額
+          .contents-total__box2
+            ¥100,000
+        .contents-amount
+          .contents-amount__box1.box
+            目標金額
+          .contents-amount__box2.box
+            ¥
+            = @project.target_amount
+        .contents-turm
+          .contents-turm__box1.box
+            募集期間
+          .contents-turm__box2.box
+            = @project.tarm
+            まで
+      
+      .project__left__return
+        %p return
+        .return
+          .return__title
+            リターン①
+          .return__price
+            寄付金額：
+            = @project.return_price_1
+            円
+          .return__content
+            = @project.return_title_1
+        .return
+          .return__title
+            リターン②
+          .return__price
+            寄付金額：
+            = @project.return_price_2
+            円
+          .return__content
+            = @project.return_title_2
+        .return
+          .return__title
+            リターン③
+          .return__price
+            寄付金額：
+            = @project.return_price_3
+            円
+          .return__content
+            = @project.return_title_3
+        .return__btn
+          = link_to '寄付をする', new_project_billing_path(@project.id), class:'donate'
+
+
+
+
+    
+    
+

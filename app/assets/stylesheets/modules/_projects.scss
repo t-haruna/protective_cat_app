@@ -162,7 +162,7 @@
     &__percent{
       margin-top: 3px;
       border: 1px solid rgb(217, 215, 212);
-      height: 50px;
+      height: 60px;
       line-height: 25px;
       background-color: #ffffff;
     }
@@ -174,9 +174,9 @@
 .Details{
   display: flex;
   justify-content: space-around;
-  font-size: 8px;
+  font-size: 12px;
   background-color: #e8e6df;
-  height: 45px;
+  height: 50px;
   
 }
 .detail{
@@ -186,6 +186,7 @@
   height: 40px;
   border: 1px solid rgb(217, 215, 212);
   background-color: #ffffff;
+  //padding-top: 5px;
 }
 
 .Contents{
@@ -201,8 +202,9 @@
   }
   &__projects{
     background-color: rgb(243, 240, 240);
-    display: flex;
-    justify-content: space-around;
+    //display: flex;
+    //justify-content: space-around;
+    
     height: 1000px;
   }
   

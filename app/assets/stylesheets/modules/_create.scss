@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.success{
+  height: 400px;
+  color: rgb(115, 112, 107);
+  font-size: 28px;
+  text-align: center;
+}
+
+.fin{
+  line-height: 200px;
+  padding-left: 20px;
+}
+
+.fin-btn{
+  font-size: 18px;
+  padding: 15px 80px;
+  color: rgb(115, 112, 107);
+  border:solid 1px #ccc;
+  background-color: rgb(244, 244, 243);
+  text-decoration: none;
+}
