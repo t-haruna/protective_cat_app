@@ -19,7 +19,7 @@
 
 .project__title{
   color: rgb(115, 112, 107);
-  //border:solid 3px #ccc;
+  margin-bottom: 20px;
   height: 150px;
   background-color: rgb(241, 237, 220);
   padding-top: 20px;
@@ -63,7 +63,7 @@
   }
   &__profile{
     border:solid 1px #ccc;
-    height: 200px;
+    height: 165px;
     
   }
   &__profile h2 {
@@ -81,7 +81,7 @@
   display: inline-block;
   width: 35%;
   &__contents{
-    height: 280px;
+    height: 300px;
     width: 100%;
     border:solid 1px #ccc;
   }
@@ -100,9 +100,15 @@
   }
 }
 
+.contents-pacent{
+  border:solid 1px #ccc;
+  height: 80px;
+  text-align: center;
+  font-size: 24px;
+}
 .contents-total{
   border:solid 1px #ccc;
-  height: 180px;
+  height: 120px;
   text-align: center;
   &__box1{
   padding-top: 30px;
@@ -196,6 +202,6 @@
   color: rgb(115, 112, 107);
   padding: 7px 150px;
   background-color: rgb(239, 213, 173);
-  border-radius: 25px;
+  border-radius: 10px;
   font-size: 21px;
 }

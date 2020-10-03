@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
+    @billings= Billing.all
   end
 
   def new
@@ -13,6 +14,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @billings= Billing.all
   end
 
   private

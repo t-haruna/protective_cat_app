@@ -4,7 +4,8 @@
   .expect
     .expect__contents
       %h2.expect__title ネコと人が共存できる世界のために
-      %p.expect__body 多くの保護団体や個人のボランティアの方々は支援者の援助や自身の貯金を切り崩して活動を行っています。
+      %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は支援者の援助や自身の貯金を切り崩して
+      %p.expect__bod 自身の生活を犠牲にして保護活動を行っています。
       %p.expect__body そのような中、新型コロナウイルスによる影響により
       %p.expect__body 保護ネコカフェの経営困難、譲渡会の中止など
       %p.expect__body 活動の継続が難しく、また運営資金の調達も今まで厳しい状況となっています。
@@ -14,15 +15,13 @@
       %p 改めて考えてみませんか？
 
 .Tag
-  .Tag__left
-    = link_to "Crowd Funding","#", class: "tag" 
-  .Tag__right
-    = link_to "Patron","#", class: "tag" 
+  Let's Crowd Funding !!
+  
   
 .Body
   .Select
     = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
-    = link_to "検索する","#", class: "Select__search select"
+    //= link_to "検索する","#", class: "Select__search select"
   .Contents
     .Contents__expect 
       %h1.Contents__expect__title クラウドファンディングとは
@@ -39,15 +38,20 @@
           .Box1
             = link_to image_tag(src= project.image, class: "Box1__image"), project_path(project.id), method: :get
           .Box2
-            .Box2__title
-              %p.Box2__title__contents= project.title
-            .Box2__percent
-              %p.Box2__percent__contents 進捗率
-              %p.Box2__percent__contents 50%
+            %p.Box2__title= project.title
+            %p 支援総額 
+            - @billings.each do |billing| 
+              - total1 = @billings.sum(:count_1)
+              - total2 = @billings.sum(:count_2)
+              - total3 = @billings.sum(:count_3)
+              - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
+            =@total
+            円
           .Details
             .Details__total.detail
-              %p 支援総額 
-              %p 100000円
+              %p.Box2__percent__contents 進捗率
+              %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
+              
             .Details__suppoter.detail
               %p 目標金額
               = project.target_amount
