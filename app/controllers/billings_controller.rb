@@ -7,8 +7,7 @@ class BillingsController < ApplicationController
   end
 
   def create
-   
-    Billing.create!(billing_params)
+    Billing.create(billing_params)
   end
 
   private
