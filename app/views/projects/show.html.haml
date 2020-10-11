@@ -23,7 +23,9 @@
           .contents-total__box1
             現在の支援総額
           .contents-total__box2
+            
             - @billings.each do |billing| 
+              
               - total1 = @billings.sum(:count_1)
               - total2 = @billings.sum(:count_2)
               - total3 = @billings.sum(:count_3)

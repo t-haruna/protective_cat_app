@@ -11,5 +11,22 @@ class Project < ApplicationRecord
 
   belongs_to :user
   has_many :billings
-  
+
+def amount_price
+
+billings.each_with_index do |billing,index| 
+
+@total1 = billings.sum(:count_1)
+@total2 = billings.sum(:count_2)
+@total3 = billings.sum(:count_3)
+
+@index = index
+
+end
+
+@project = Project.find(1)
+
+@total1*@project.return_price_1+@total2*@project.return_price_2+@total3*@project.return_price_3 
+@index
+end
 end
